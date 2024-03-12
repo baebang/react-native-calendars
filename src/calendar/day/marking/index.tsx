@@ -1,6 +1,6 @@
 import filter from 'lodash/filter';
 import React, {useRef} from 'react';
-import {View, ViewStyle, TextStyle, StyleProp} from 'react-native';
+import {View, ViewStyle, TextStyle, StyleProp,Text} from 'react-native';
 
 import {Theme, MarkingTypes} from '../../../types';
 import {extractDotProps} from '../../../componentUpdater';
@@ -91,7 +91,7 @@ const Marking = (props: MarkingProps) => {
   };
 
   const renderPeriod = (index: number, item: any) => {
-    const {color, startingDay, endingDay} = item;
+    const {color, startingDay, endingDay,content} = item;
     const styles = [
       style.current.period,
       {
@@ -104,7 +104,7 @@ const Marking = (props: MarkingProps) => {
     if (endingDay) {
       styles.push(style.current.endingDay);
     }
-    return <View key={index} style={styles}/>;
+    return <View key={index} style={styles}><Text>{startingDay ? "dkdkd":null}</Text></View>;
   };
 
   const renderDot = (index?: number, item?: any) => {
